@@ -1,0 +1,18 @@
+{% extends "student/base.html" %} 
+{% load crispy_forms_tags %} 
+{% block content %}
+<div class="container">
+    <div class="content-section my-auto">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+            <legend class="mb-4 border-bottom">LOG IN</legend>
+            {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">LOGIN</button>
+            </div>
+        </form>
+  </div>
+</div>
+{% endblock content %}

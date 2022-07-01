@@ -1,0 +1,51 @@
+body {
+  background: #fafafa;
+  color: #333333;
+  margin-top: 5rem;
+  
+}
+
+.heading,
+.navbar-brand {
+  background: rgb(196, 91, 137);
+  background: linear-gradient(
+    90deg,
+    rgba(196, 91, 137, 1) 32%,
+    rgba(182, 220, 212, 1) 70%,
+    rgba(148, 187, 233, 1) 80%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.deetsheader {
+  background: rgb(10, 113, 40);
+  background: linear-gradient(
+    90deg,
+    rgba(10, 113, 40, 0.7374300061821604) 18%,
+    rgba(182, 215, 220, 1) 48%,
+    rgba(14, 58, 196, 1) 91%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.theaddeets,h1 {
+  background: linear-gradient(
+    90deg,
+    rgba(10, 113, 40, 0.7374300061821604) 18%,
+    rgba(183, 221, 99, 1) 52%,
+    rgba(147, 55, 83, 0.48252804539784666) 91%
+  );
+}
+.pointer {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 720px) {
+  form{
+  width: 50%;
+}
+}
+.nostyle{
+ color: inherit;
+  text-decoration: none;
+}

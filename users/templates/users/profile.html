@@ -1,0 +1,13 @@
+{% extends 'student/base.html' %}
+{% block content %}
+<div class="card">
+  <div class="card-header">
+    Admin - {{user.username}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Admin Rights </h5>
+    <p class="card-text">Only the admin can be logged in and this website is authenticated such way. Admin can create a new record for any student, update records and even delete records.</p>
+    <a href="{% url 'records-list' %}" class="btn btn-success">Go To Records</a>
+  </div>
+</div>
+{% endblock content %}

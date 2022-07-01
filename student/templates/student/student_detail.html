@@ -1,0 +1,49 @@
+{% extends 'student/base.html' %} {% block content %}
+<div class="container">
+  <h2 class="text-center deetsheader">{{object.name}}'s Record
+    <a href="{% url 'record-update' object.pk %}" class="nostyle"><span class="material-symbols-outlined" >edit_note</span></a>
+  <a href="{% url 'record-delete' object.pk %}" class="nostyle"><span class="material-symbols-outlined">
+              delete
+            </span></a>
+  </h2> 
+  <h6 class="text-justify">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        This is the student record of
+        <span class="lead">{{object.name}}</span> whose roll number is
+        <span class="lead">{{object.roll_no}}</span>.
+      </li>
+      <li class="list-group-item">
+        He is a <span class="lead">{{object.year}} </span> year student in the stream
+        <span class="lead">{{object.class_signature|slice:":3"}}</span>.
+      </li>
+      <li class="list-group-item">
+        He belongs to the
+        <span class="lead">{{object.class_signature|slice:"4:"}}</span> section
+        and he has secured a cgpa of <span class="lead">{{object.cgpa}}</span>
+      </li>
+    </ul>
+  </h6>
+  <table class="table mt-3 table-hover">
+    <thead class="theaddeets">
+      <tr>
+        <th scope="col">Roll Number</th>
+        <th scope="col">Name</th>
+        <th scope="col">Year</th>
+        <th scope="col">Branch n Section</th>
+        <th scope="col">CGPA</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{object.roll_no}}</th>
+        <td>{{object.name}}</td>
+        <td><a href="{% url 'records-year' object.year %}">{{object.year}}</a></td>
+        <td>{{object.class_signature}}</td>
+        <td>{{object.cgpa}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+{% endblock content %}

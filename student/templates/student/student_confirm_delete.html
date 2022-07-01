@@ -1,0 +1,24 @@
+{% extends 'student/base.html' %} 
+{% load crispy_forms_tags %}
+{% block content %} 
+<div class="container mt-4">
+  
+  <h1 class="text-center heading ">Delete Student Record </h1>
+  <div class="container mt-4">
+    <h4 class="text-center ">You are about to delete <span class="font-weight-bold text-info">{{object.name}}</span> of <span class="font-weight-bold text-info">{{object.class_signature}} ({{object.year}}/IV)</span>'s record?</h4>
+    <form method="POST" class="mx-4  m-auto">
+      {% csrf_token %} 
+      {{form|crispy}}
+    <div class="text-center">
+       <h5> Are u sure u want to delete <span class="text-info">{{object.roll_no}}</span>'s record ?</h5>
+        <div class="container mt-4  " >
+            <div class="row no-gutters">
+                <div class="col"><button type="submit" class="btn btn-danger">Delete</button></div>
+                <div class="col"><a type="button" class="btn btn-warning" href="{% url 'records-list' %}">Go back</a></div>
+            </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock content %}

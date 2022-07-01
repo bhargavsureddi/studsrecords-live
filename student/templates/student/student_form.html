@@ -1,0 +1,17 @@
+{% extends 'student/base.html' %} 
+{% load crispy_forms_tags %}
+{% block content %} 
+<div class="container mt-4">
+  
+  <h1 class="text-center heading">Create a new Student Record</h1>
+  <div class="container">
+    <form method="POST" class="mt-2 m-auto">
+      {% csrf_token %} 
+      {{form|crispy}}
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Submit Record</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock content %}
